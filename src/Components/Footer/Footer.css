@@ -1,0 +1,236 @@
+.footer {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(10, 10, 20, 0) 0%, rgba(10, 10, 20, 0.95) 50%, rgba(5, 5, 15, 1) 100%);
+    border-top: 1px solid rgba(64, 255, 170, 0.1);
+    overflow: hidden;
+    margin-top: 6rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-social {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.footer-social-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #40ffaa 0%, #4079ff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: rgba(20, 20, 35, 0.6);
+    border: 2px solid rgba(64, 255, 170, 0.2);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-social-link::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(64, 255, 170, 0.3), transparent);
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+}
+
+.footer-social-link:hover {
+    transform: translateY(-5px) scale(1.1);
+    border-color: #40ffaa;
+    color: #40ffaa;
+    box-shadow:
+        0 8px 25px rgba(64, 255, 170, 0.3),
+        0 0 0 4px rgba(64, 255, 170, 0.1);
+}
+
+.footer-social-link:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.footer-social-link:active {
+    transform: translateY(-3px) scale(1.05);
+}
+
+.footer-divider {
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(64, 255, 170, 0.3),
+            rgba(64, 121, 255, 0.3),
+            transparent);
+    margin: 2rem auto;
+    max-width: 600px;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.footer-text {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 0 0.75rem;
+    font-weight: 500;
+}
+
+.footer-tagline {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+    font-style: italic;
+}
+
+.heart {
+    color: #ff4d4d;
+    animation: heartbeat 1.5s ease-in-out infinite;
+    display: inline-block;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    10%,
+    30% {
+        transform: scale(1.1);
+    }
+
+    20%,
+    40% {
+        transform: scale(1);
+    }
+}
+
+.footer-glow {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 200px;
+    background: radial-gradient(ellipse at center,
+            rgba(64, 255, 170, 0.15) 0%,
+            rgba(64, 121, 255, 0.1) 30%,
+            transparent 70%);
+    filter: blur(40px);
+    animation: glowPulse 4s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: translateX(-50%) scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        padding: 3rem 1.5rem 1.5rem;
+    }
+
+    .footer-social-title {
+        font-size: 1.25rem;
+    }
+
+    .footer-social-links {
+        gap: 1rem;
+    }
+
+    .footer-social-link {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+
+    .footer-text {
+        font-size: 0.85rem;
+    }
+
+    .footer-tagline {
+        font-size: 0.8rem;
+    }
+
+    .footer-glow {
+        width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content {
+        padding: 2.5rem 1rem 1rem;
+    }
+
+    .footer-social-title {
+        font-size: 1.1rem;
+    }
+
+    .footer-social-links {
+        gap: 0.75rem;
+    }
+
+    .footer-social-link {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+}

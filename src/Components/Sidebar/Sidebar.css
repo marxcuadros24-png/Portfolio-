@@ -1,0 +1,199 @@
+/* Sidebar - Navbar Vertical Completo */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo Section */
+.sidebar-logo {
+    padding: 2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-text {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #40ffaa, #4079ff, #ff40aa);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 30px rgba(64, 255, 170, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: logoGlow 3s ease-in-out infinite;
+}
+
+.logo-text:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+@keyframes logoGlow {
+
+    0%,
+    100% {
+        filter: brightness(1) drop-shadow(0 0 10px rgba(64, 255, 170, 0.5));
+    }
+
+    50% {
+        filter: brightness(1.3) drop-shadow(0 0 20px rgba(64, 121, 255, 0.7));
+    }
+}
+
+/* Navigation Section */
+.sidebar-nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* Ocultar scroll horizontal */
+}
+
+/* Adaptar GooeyNav para layout vertical */
+.sidebar-nav .gooey-nav-container {
+    width: 100%;
+}
+
+.sidebar-nav .gooey-nav-container nav {
+    width: 100%;
+    justify-content: center;
+}
+
+.sidebar-nav .gooey-nav-container nav ul {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+    width: 100%;
+}
+
+.sidebar-nav .gooey-nav-container nav ul li {
+    width: 100%;
+    text-align: center;
+}
+
+.sidebar-nav .gooey-nav-container nav ul li a {
+    display: block;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+    letter-spacing: 0.05em;
+}
+
+/* Ajustar efectos para vertical */
+.sidebar-nav .gooey-nav-container .effect.filter::before {
+    inset: -100px;
+}
+
+/* Colores personalizados para partículas */
+:root {
+    --color-1: #40ffaa;
+    --color-2: #4079ff;
+    --color-3: #ff40aa;
+    --color-4: #ffaa40;
+}
+
+/* Responsive */
+/* Laptops medianos y tablets grandes */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .sidebar-logo {
+        padding: 1.5rem 1rem;
+    }
+
+    .logo-text {
+        font-size: 2rem;
+    }
+
+    .sidebar-nav .gooey-nav-container nav ul {
+        padding: 0 1rem;
+        gap: 1.2rem;
+    }
+
+    .sidebar-nav .gooey-nav-container nav ul li a {
+        padding: 0.9rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 80px;
+    }
+
+    .sidebar-logo {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .logo-text {
+        font-size: 1.8rem;
+    }
+
+    .sidebar-nav .gooey-nav-container nav ul {
+        padding: 0 0.5rem;
+        gap: 1rem;
+    }
+
+    .sidebar-nav .gooey-nav-container nav ul li a {
+        padding: 0.8rem 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+    .sidebar {
+        width: 60px;
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
+    }
+
+    .sidebar-nav .gooey-nav-container nav ul li a {
+        font-size: 0.75rem;
+        padding: 0.6rem 0.3rem;
+    }
+}
+
+/* Scrollbar personalizado */
+.sidebar-nav::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar-nav::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb {
+    background: rgba(64, 255, 170, 0.3);
+    border-radius: 3px;
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb:hover {
+    background: rgba(64, 255, 170, 0.5);
+}
