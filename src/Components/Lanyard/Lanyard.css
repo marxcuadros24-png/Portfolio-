@@ -1,0 +1,39 @@
+/*
+	Installed from https://reactbits.dev/ts/default/
+*/
+
+.lanyard-wrapper {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(1);
+  transform-origin: center;
+}
+
+/* Tablets y laptops pequeños */
+@media (max-width: 1024px) {
+  .lanyard-wrapper {
+    height: 450px;
+    transform: scale(0.75);
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .lanyard-wrapper {
+    height: 350px;
+    transform: scale(0.6);
+  }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .lanyard-wrapper {
+    height: 300px;
+    transform: scale(0.5);
+  }
+}

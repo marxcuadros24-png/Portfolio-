@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Lightning from './Backgrounds/Lightning/Lightning'
-import ProfileCard from './Components/ProfileCard/ProfileCard'
+import Lanyard from './Components/Lanyard/Lanyard'
 import GradientText from './TextAnimations/GradientText/GradientText'
 import RotatingText from './TextAnimations/RotatingText/RotatingText'
 import LogoLoop from './Animations/LogoLoop/LogoLoop'
@@ -79,7 +79,7 @@ const projects = [
 const sidebarNavItems = [
   { label: "Inicio", href: "#inicio" },
   { label: "Sobre Mí", href: "#sobre-mi" },
-  { label: "Skills", href: "#skills" },
+  { label: "Stack Tecnológico", href: "#skills" },
   { label: "Proyectos", href: "#proyectos" },
   { label: "Contacto", href: "#contacto" },
 ];
@@ -143,18 +143,7 @@ function App() {
           </div>
 
           <div className="hero-right">
-            <ProfileCard
-              name="Marx Cuadros"
-              title="Software Developer"
-              handle="Marx_incode"
-              status="Online"
-              contactText="Contact Me"
-              avatarUrl="/tu-foto.jpg"
-              showUserInfo={true}
-              enableTilt={true}
-              enableMobileTilt={false}
-              onContactClick={() => console.log('Contact clicked')}
-            />
+            <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
           </div>
         </section>
 
@@ -188,7 +177,7 @@ function App() {
               animationSpeed={3}
               showBorder={false}
             >
-              Skills
+              Stack Tecnológico
             </GradientText>
           </h2>
           <div style={{ height: '200px', position: 'relative', overflow: 'hidden' }}>

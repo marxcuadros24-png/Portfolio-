@@ -70,6 +70,12 @@
 .logoloop__node {
     display: inline-flex;
     align-items: center;
+    color: #40ffaa;
+    transition: color 0.3s ease;
+}
+
+.logoloop__item:hover .logoloop__node {
+    color: #60ffcc;
 }
 
 .logoloop__item img {
